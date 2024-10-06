@@ -11,9 +11,9 @@ url = 'http://users.bugred.ru/'
 browser = webdriver.Chrome()
 login_manager = 'manager@mail.ru'
 password_manager = '1'
-log_mail_pass_text = ['new_user_1000', 'new_mail_1000@mail.ru', '1']
+log_mail_pass_text = ['new_user_1000', 'new_mail_1000@mail.ru', '111']
 avatar_file = os.getenv('PHOTO_PATH')
-other_info_text = ['name1', 'surname1', 'patronymic1', 'cat', 'dog', 'bird', 'pig', 'hamster', 'squirrel', '88005353535', 'Moscow, Russia', '7743013902']
+other_info_text = ['name1', 'surname1', 'patronymic1', 'мася', 'бобик', 'кеша', 'проскофья', 'булочка', 'орешек', '88005353535', 'Ул. Проспект Вернадского д. 64', '7743013902']
 
 try:
     browser.get(url)
@@ -62,6 +62,9 @@ try:
         if i < len(other_info_text):
             other_info[i].send_keys(other_info_text[i])
 
+    # time.sleep(5)
+    act_create = browser.find_element(By.NAME, 'act_create')
+    act_create.click()
 
 finally:
     time.sleep(3)
