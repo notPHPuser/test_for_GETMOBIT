@@ -67,5 +67,5 @@ try:
     act_create.click()
 
 finally:
-    time.sleep(3)
+    time.sleep(300)
     browser.quit()
